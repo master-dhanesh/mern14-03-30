@@ -1,4 +1,7 @@
+import abc from "./Read.module.css";
+
 const Read = (props) => {
+    console.log(abc);
     const users = props.users;
     const setusers = props.setusers;
 
@@ -15,9 +18,10 @@ const Read = (props) => {
             </li>
         );
     });
+
     return (
         <div>
-            <h1>Read User</h1>
+            <h1 className={abc.head}>Read User</h1>
             <ol>{users.length > 0 ? userrender : "No data Found!"}</ol>
         </div>
     );

@@ -22,7 +22,7 @@ const Create = (props) => {
 
     return (
         <div>
-            <h1>Create User</h1>
+            <h1 className="text-5xl font-thin">Create User</h1>
             <form onSubmit={handleSubmit(SubmitHandler)}>
                 <input
                     {...register("name", {
