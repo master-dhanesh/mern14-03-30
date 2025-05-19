@@ -1,9 +1,8 @@
-import abc from "./Read.module.css";
+import { useContext } from "react";
+import { usercontext } from "../Wrapper";
 
-const Read = (props) => {
-    console.log(abc);
-    const users = props.users;
-    const setusers = props.setusers;
+const Read = () => {
+    const [users, setusers] = useContext(usercontext);
 
     const DeleteHandler = (id) => {
         const filterusers = users.filter((user) => user.id != id);
@@ -21,7 +20,7 @@ const Read = (props) => {
 
     return (
         <div>
-            <h1 className={abc.head}>Read User</h1>
+            <h1 className="font-thin text-5xl">Read User</h1>
             <ol>{users.length > 0 ? userrender : "No data Found!"}</ol>
         </div>
     );

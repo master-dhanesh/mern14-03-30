@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
+import { useContext } from "react";
+import { usercontext } from "../Wrapper";
 
-const Create = (props) => {
-    const users = props.users;
-    const setusers = props.setusers;
+const Create = () => {
+    const [users, setusers] = useContext(usercontext);
 
     const {
         register,
