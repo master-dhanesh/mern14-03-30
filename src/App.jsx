@@ -1,11 +1,11 @@
-import Create from "./components/Create";
-import Read from "./components/Read";
+import Nav from "./components/Nav";
+import Mainroutes from "./routes/Mainroutes";
 
 const App = () => {
     return (
-        <div className="w-screen h-screen bg-gray-800 text-white p-10">
-            <Create />
-            <Read />
+        <div className="w-screen h-screen bg-gray-800 text-white p-5">
+            <Nav />
+            <Mainroutes />
         </div>
     );
 };
