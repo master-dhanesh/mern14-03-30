@@ -1,11 +1,10 @@
+import MainRoutes from "./routes/Mainroutes";
 import Nav from "./components/Nav";
-import Mainroutes from "./routes/Mainroutes";
-
 const App = () => {
     return (
-        <div className="px-[20%] w-screen h-screen bg-gray-800 text-white py-5">
+        <div>
             <Nav />
-            <Mainroutes />
+            <MainRoutes />
         </div>
     );
 };

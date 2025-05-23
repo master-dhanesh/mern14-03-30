@@ -1,27 +1,26 @@
-import { Route, Routes } from "react-router-dom";
-import About from "../components/About";
-import Home from "../components/Home";
-import Products from "../components/Products";
-import Services from "../components/Services";
-import ServiceDetails from "../components/ServiceDetails";
-import ProductDetails from "../components/ProductDetails";
-import ProductDesc from "../components/ProductDesc";
+import { Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import Recipes from "../pages/Recipes";
+import Recipe from "../components/Recipe";
+import About from "../pages/About";
+import Favroite from "../pages/Favroite";
+import Create from "../pages/Create";
+import PageNotFound from "../pages/PageNotFound";
+import Update from "../pages/Update";
 
-const Mainroutes = () => {
+const MainRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/details" element={<ProductDetails />} />
-            <Route path="/products/desc/:name" element={<ProductDesc />} />
-
-            <Route path="/services" element={<Services />}>
-                <Route path="/services/details" element={<ServiceDetails />} />
-            </Route>
-
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/recipes/create-recipe" element={<Create />} />
+            <Route path="/recipes/detail/:id" element={<Recipe />} />
+            <Route path="/recipes/update-recipe/:id" element={<Update />} />
             <Route path="/about" element={<About />} />
+            <Route path="/favroite" element={<Favroite />} />
+            <Route path="*" element={<PageNotFound />} />
         </Routes>
     );
 };
 
-export default Mainroutes;
+export default MainRoutes;
