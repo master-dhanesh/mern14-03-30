@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
     return (
-        <div>
+        <div className="flex gap-x-5 mb-10">
             <NavLink
                 className={(e) => (e.isActive ? "text-red-400" : "")}
                 to="/"
