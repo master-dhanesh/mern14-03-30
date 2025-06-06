@@ -32,12 +32,20 @@ const Recipe = () => {
         const copydata = [...data];
         copydata[index] = { ...copydata[index], ...recipe };
         setdata(copydata);
+
+        localStorage.setItem("recipe", JSON.stringify(copydata));
+
         toast.success("recipe updated!");
     };
 
     const deletehandler = () => {
         const filtererecipe = data.filter((r) => r.id != id);
+        // if recipe in fav then delete recipe from fav as well and save
+
         setdata(filtererecipe);
+
+        localStorage.setItem("recipe", JSON.stringify(filtererecipe));
+
         toast.success("recipe deleted!");
         navigate("/recipes");
     };

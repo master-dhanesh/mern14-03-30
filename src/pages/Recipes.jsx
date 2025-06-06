@@ -5,7 +5,6 @@ import RecipeTemplate from "../components/RecipeTemplate";
 
 const Recipes = () => {
     const { data } = useContext(recipecontext);
-    console.log(data);
 
     const showrecipies = data.map((recipe) => (
         <RecipeTemplate key={recipe.id} recipe={recipe} />
