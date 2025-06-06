@@ -1,10 +1,11 @@
-import MainRoutes from "./routes/Mainroutes";
-import Nav from "./components/Nav";
+import { useSelector } from "react-redux";
+
 const App = () => {
+    const data = useSelector((state) => state);
+    console.log(data);
     return (
-        <div className="p-5 w-[80%] mx-auto font-thin">
-            <Nav />
-            <MainRoutes />
+        <div className="py-10 px-[10%] mt-10 font-thin">
+            <h1 className="text-5xl">Apps</h1>
         </div>
     );
 };
