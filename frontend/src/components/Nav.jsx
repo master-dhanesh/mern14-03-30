@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
+    const { user } = useSelector((state) => state.userReducer);
     return (
         <div className="mb-5 flex gap-x-10">
             <NavLink
@@ -9,12 +11,31 @@ const Nav = () => {
             >
                 Products
             </NavLink>
-            <NavLink
-                className={({ isActive }) => (isActive ? "text-red-400" : "")}
-                to="/signin"
-            >
-                Signin
-            </NavLink>
+
+            {user ? (
+                <>
+                    <NavLink
+                        className={({ isActive }) =>
+                            isActive ? "text-red-400" : ""
+                        }
+                        to="/settings"
+                    >
+                        User Setting
+                    </NavLink>
+                </>
+            ) : (
+                <>
+                    <NavLink
+                        className={({ isActive }) =>
+                            isActive ? "text-red-400" : ""
+                        }
+                        to="/signin"
+                    >
+                        Signin
+                    </NavLink>
+                </>
+            )}
+
             <NavLink
                 className={({ isActive }) => (isActive ? "text-red-400" : "")}
                 to="/about"
