@@ -1,13 +1,14 @@
-import React from "react";
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import Product from "../pages/Product";
-import PageNotFound from "../pages/PageNotFound";
-import About from "../pages/About";
-import Signin from "../pages/users/Signin";
-import Signup from "../pages/users/Signup";
-import Unauth from "./Unauth";
-import Settings from "../pages/users/Settings";
-import Auth from "./Auth";
+
+const Product = lazy(() => import("../pages/Product"));
+const PageNotFound = lazy(() => import("../pages/PageNotFound"));
+const About = lazy(() => import("../pages/About"));
+const Signin = lazy(() => import("../pages/users/Signin"));
+const Signup = lazy(() => import("../pages/users/Signup"));
+const Unauth = lazy(() => import("./Unauth"));
+const Settings = lazy(() => import("../pages/users/Settings"));
+const Auth = lazy(() => import("./Auth"));
 
 const Mainroutes = () => {
     return (
