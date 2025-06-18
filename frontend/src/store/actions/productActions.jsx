@@ -32,7 +32,7 @@ export const asyncupdateproduct =
         }
     };
 
-export const asyncdeleteuser = (id) => async (dispatch, getState) => {
+export const asyncdeleteproduct = (id) => async (dispatch, getState) => {
     try {
         await axios.delete("/products/" + id);
         dispatch(asyncloadproduct());

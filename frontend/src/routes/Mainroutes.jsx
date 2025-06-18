@@ -1,5 +1,7 @@
 import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import ProductDetails from "../pages/ProductDetails";
+import CreateProduct from "../pages/CreateProduct";
 
 const Product = lazy(() => import("../pages/Product"));
 const PageNotFound = lazy(() => import("../pages/PageNotFound"));
@@ -37,6 +39,23 @@ const Mainroutes = () => {
                 element={
                     <Auth>
                         <Settings />
+                    </Auth>
+                }
+            />
+
+            <Route
+                path="/product-detail/:id"
+                element={
+                    <Auth>
+                        <ProductDetails />
+                    </Auth>
+                }
+            />
+            <Route
+                path="/create-product/"
+                element={
+                    <Auth>
+                        <CreateProduct />
                     </Auth>
                 }
             />
