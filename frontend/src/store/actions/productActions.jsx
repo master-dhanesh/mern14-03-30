@@ -1,9 +1,10 @@
 import axios from "../../api/config";
-import { loadproducts, smartloadproducts } from "../reducers/productSlice";
+import { loadproducts } from "../reducers/productSlice";
 
 export const asyncloadproduct = () => async (dispatch, getState) => {
     try {
-        const { data } = await axios.get("/products");
+        const limit = getState().productReducer.products.length;
+        const { data } = await axios.get(`/products?_limit=${limit}`);
         dispatch(loadproducts(data));
         console.log("Products Fetched!");
     } catch (error) {

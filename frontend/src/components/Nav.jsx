@@ -32,6 +32,14 @@ const Nav = () => {
                             Create Product
                         </NavLink>
                     )}
+                    <NavLink
+                        className={({ isActive }) =>
+                            isActive ? "text-red-400" : ""
+                        }
+                        to="/cart"
+                    >
+                        Cart
+                    </NavLink>
                 </>
             ) : (
                 <>

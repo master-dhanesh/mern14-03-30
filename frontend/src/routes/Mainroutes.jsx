@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "../pages/ProductDetails";
 import CreateProduct from "../pages/CreateProduct";
+import Cart from "../pages/Cart";
 
 const Product = lazy(() => import("../pages/Product"));
 const PageNotFound = lazy(() => import("../pages/PageNotFound"));
@@ -56,6 +57,15 @@ const Mainroutes = () => {
                 element={
                     <Auth>
                         <CreateProduct />
+                    </Auth>
+                }
+            />
+
+            <Route
+                path="/cart"
+                element={
+                    <Auth>
+                        <Cart />
                     </Auth>
                 }
             />
